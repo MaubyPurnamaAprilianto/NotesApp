@@ -1,0 +1,67 @@
+GET http://localhost:5000/auth/user
+
+###
+DELETE http://localhost:5000/auth/user/3
+
+###
+PUT http://localhost:5000/auth/user/2
+Content-Type: application/json
+
+{
+  "username": "lorem-Edit",
+  "email": "lorem@gmail.com",
+  "password": "password"
+}
+
+###
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+  "username": "lorem",
+  "email": "lorem@gmail.com",
+  "password": "password"
+}
+
+###
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email": "testuser@example.com",
+  "password": "yourpassword"
+}
+
+###
+POST http://localhost:5000/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIxODg1OTU3LCJleHAiOjE3MjE4ODk1NTd9.9VQlU1mukvKDiUarlQ5HUAi6DvsA0nGU1K-rZw1qlSY
+
+{
+  "title": "My First Note 2",
+  "content": "This is the content of my first note.",
+  "tags": "personal, important"
+}
+
+###
+GET http://localhost:5000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIxODg1OTU3LCJleHAiOjE3MjE4ODk1NTd9.9VQlU1mukvKDiUarlQ5HUAi6DvsA0nGU1K-rZw1qlSY
+
+###
+GET http://localhost:5000/notes/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIxODg1OTU3LCJleHAiOjE3MjE4ODk1NTd9.9VQlU1mukvKDiUarlQ5HUAi6DvsA0nGU1K-rZw1qlSY
+
+###
+PUT http://localhost:5000/notes/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIxODg1OTU3LCJleHAiOjE3MjE4ODk1NTd9.9VQlU1mukvKDiUarlQ5HUAi6DvsA0nGU1K-rZw1qlSY
+
+{
+  "title": "My First Note-Edit",
+  "content": "This is the content of my first note.",
+  "tags": "personal, important"
+}
+
+###
+DELETE  http://localhost:5000/notes/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzIxODg1OTU3LCJleHAiOjE3MjE4ODk1NTd9.9VQlU1mukvKDiUarlQ5HUAi6DvsA0nGU1K-rZw1qlSY
